@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Rethink Sans", sans-serif;
+}
+a {
+  text-decoration: none;
+}
+.container {
+  width: 80%;
+  margin: auto;
+}
+header {
+  background-color: #333;
+  padding: 10px 0;
+}
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-content .logo {
+  font-size: 35px;
+  color: #fff;
+  font-weight: bold;
+}
+nav ul {
+  display: flex;
+  list-style: none;
+}
+nav li a {
+  display: block;
+  color: #fff;
+  min-width: 50px;
+  padding: 5px;
+  margin: 0 5px;
+}
