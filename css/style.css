@@ -36,3 +36,46 @@ nav li a {
   padding: 5px;
   margin: 0 5px;
 }
+nav li a:hover {
+  color: #bbb;
+  transition: 0.3s;
+}
+/* ----------------- form -------------------- */
+.section-form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  text-align: center;
+  background: #bc6ff1;
+  padding: 20px;
+}
+.section-form h2 {
+  font-size: 50px;
+  letter-spacing: 1px;
+  color: #52057b;
+}
+.section-form form {
+}
+.section-form input {
+  display: block;
+  width: 100%;
+  margin: 5px 0;
+  height: 40px;
+  border: 1px solid #ddd;
+  padding: 5px;
+  font-family: "Rethink Sans", sans-serif;;
+  outline: none;
+  border-radius: 5px;
+}
+.section-form input[type="submit"]{
+font-size: 25px;
+text-transform: uppercase;
+height: fit-content;
+cursor: pointer;
+transition: 0.3s;
+}
+.section-form input[type="submit"]:hover{
+  opacity: 0.8;
+}
