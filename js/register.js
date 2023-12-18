@@ -8,7 +8,9 @@ let password = document.getElementById("password");
 
 let signUpBtn = document.getElementById("signUp");
 
-signUpBtn.addEventListener("click", function (e) {
+signUpBtn.addEventListener("click", register);
+
+function register(e) {
   e.preventDefault();
   if (username.value === "" || email.value === "" || password.value === "") {
     alert("please enter your deta..");
@@ -16,8 +18,9 @@ signUpBtn.addEventListener("click", function (e) {
     window.localStorage.setItem("username", username.value);
     window.localStorage.setItem("email", email.value);
     window.localStorage.setItem("password", password.value);
+
+    setTimeout(() => {
+      window.location = "../login.html";
+    }, 1500);
   }
-  setTimeout(() => {
-    window.location = "../index.html";
-  },1500);
-});
+}
