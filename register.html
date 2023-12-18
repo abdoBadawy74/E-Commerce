@@ -11,7 +11,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./css/style.css" />
-    <link rel="stylesheet" href="./css/login.css" />
+    <link rel="stylesheet" href="./css/register.css" />
   </head>
   <body>
     <header>
@@ -29,12 +29,13 @@
     </header>
     <section class="section-form">
       <h2>Register User</h2>
-      <form>
-        <input type="text" placeholder="Enter UserName.." />
-        <input type="email" placeholder="Enter Email.." />
-        <input type="password" placeholder="Enter Password.." />
-        <input type="submit" value="Sign up" />
+      <form novalidate>
+        <input type="text" placeholder="Enter UserName.." id="username" />
+        <input type="email" placeholder="Enter Email.." id="email" />
+        <input type="password" placeholder="Enter Password.." id="password" />
+        <input type="submit" value="Sign up" id="signUp" />
       </form>
     </section>
+    <script src="./js/register.js"></script>
   </body>
 </html>

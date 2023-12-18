@@ -29,6 +29,9 @@ nav ul {
   display: flex;
   list-style: none;
 }
+nav ul#userInfo{
+  /* display: none; */
+}
 nav li a {
   display: block;
   color: #fff;
@@ -55,8 +58,6 @@ nav li a:hover {
   font-size: 50px;
   letter-spacing: 1px;
   color: #52057b;
-}
-.section-form form {
 }
 .section-form input {
   display: block;
