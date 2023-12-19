@@ -29,8 +29,8 @@ nav ul {
   display: flex;
   list-style: none;
 }
-nav ul#userInfo{
-  /* display: none; */
+nav ul#userInfo {
+  display: none;
 }
 nav li a {
   display: block;
@@ -66,17 +66,60 @@ nav li a:hover {
   height: 40px;
   border: 1px solid #ddd;
   padding: 5px;
-  font-family: "Rethink Sans", sans-serif;;
+  font-family: "Rethink Sans", sans-serif;
   outline: none;
   border-radius: 5px;
 }
-.section-form input[type="submit"]{
-font-size: 25px;
-text-transform: uppercase;
-height: fit-content;
-cursor: pointer;
-transition: 0.3s;
+.section-form input[type="submit"] {
+  font-size: 25px;
+  text-transform: uppercase;
+  height: fit-content;
+  cursor: pointer;
+  transition: 0.3s;
 }
-.section-form input[type="submit"]:hover{
+.section-form input[type="submit"]:hover {
   opacity: 0.8;
+}
+
+/* product style */
+
+.products {
+  width: 60%;
+  margin: 10px 0;
+}
+.product-item {
+  display: flex;
+  width: 100%;
+  border: 1px solid #ddd;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+.product-img {
+  width: 25%;
+  margin-right: 10px;
+}
+.product-actions {
+  flex: 1;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px 10px 10px 0;
+}
+.product-item .add-to-cart {
+  display: block;
+  margin-left: auto;
+  background-color: darkgreen;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  font-family: "Rethink Sans", sans-serif;
+}
+.product-actions i.favorite {
+  cursor: pointer;
+  width: 20px;
+  margin: 0 auto;
+  /* padding-bottom: 10px; */
 }
