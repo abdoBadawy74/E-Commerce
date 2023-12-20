@@ -92,7 +92,8 @@ nav li a:hover {
   width: 100%;
   border: 1px solid #ddd;
   justify-content: space-between;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
+  min-height: 150px;
 }
 .product-img {
   width: 25%;
@@ -121,5 +122,4 @@ nav li a:hover {
   cursor: pointer;
   width: 20px;
   margin: 0 auto;
-  /* padding-bottom: 10px; */
 }
