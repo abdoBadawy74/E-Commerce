@@ -19,9 +19,20 @@ function drawProductCartUI(products) {
             <span>size: ${item.size}</span>
           </div>
           <div class="product-actions">
-            <button class="add-to-cart" onclick="removeFromCart(${item.id})">Remove From Cart</button>
+            <button class="add-to-cart" onclick="removeFromCart(${item.id})" style="padding: 2px; margin-left:5px">Remove From Cart</button>
           </div>
         </div>`;
   });
   productsDom.innerHTML = productsUI;
+}
+
+function removeFromCart(id) {
+  if (productsInCart) {
+    let items = JSON.parse(productsInCart);
+
+    let filteredItems = items.filter((item) => item.id !== id);
+
+    drawProductCartUI(filteredItems);
+    window.localStorage.setItem(productsInCart, JSON.stringify(filteredItems));
+  }
 }

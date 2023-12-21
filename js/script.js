@@ -32,23 +32,19 @@ function drawProductUI() {
 
 window.onload = drawProductUI;
 
-function cartMenuData() {
-  let addedItems = window.localStorage.getItem("productsInCart")
-    ? JSON.parse(window.localStorage.getItem("productsInCart"))
-    : [];
+let addedItems = window.localStorage.getItem("productsInCart")
+  ? JSON.parse(window.localStorage.getItem("productsInCart"))
+  : [];
 
-  if (addedItems) {
-    addedItems.map((item) => {
-      cartProductsDiv.innerHTML += `<p>${item.title}</p>`;
-    });
-    addedItems.length > 0
-      ? (badge.style.display = "block")
-      : (badge.style.display = "none");
-    badge.innerHTML = addedItems.length;
-  }
+if (addedItems) {
+  addedItems.map((item) => {
+    cartProductsDiv.innerHTML += `<p>${item.title}</p>`;
+  });
+  addedItems.length > 0
+    ? (badge.style.display = "block")
+    : (badge.style.display = "none");
+  badge.innerHTML = addedItems.length;
 }
-
-cartMenuData();
 
 function addedToCart(id) {
   if (window.localStorage.getItem("username")) {
