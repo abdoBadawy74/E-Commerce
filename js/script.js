@@ -29,6 +29,14 @@ function logout() {
 
 let productsDom = document.querySelector(".products");
 
+let cardProducts = document.querySelector(".card-products");
+
+let cardProductsDiv = document.querySelector(".card-products div");
+
+let shoppingCard = document.querySelector(".shopping-card");
+
+let badge = document.querySelector(".badge");
+
 let products = [
   {
     id: 1,
@@ -86,7 +94,13 @@ window.onload = drawProductUI;
 
 function addedToCard(id) {
   let clickedItem = products.find((item) => item.id === id);
-  console.log(clickedItem);
+  cardProductsDiv.innerHTML += `
+  <p>${clickedItem.title}</p>
+  `;
+
+  let cardProductsItem = document.querySelectorAll(".card-products div p");
+  badge.style.display = "block";
+  badge.innerHTML = cardProductsItem.length;
 }
 
 function checkLoggedInUser() {
@@ -94,5 +108,17 @@ function checkLoggedInUser() {
     window.location = "../card.html";
   } else {
     window.location = "../login.html";
+  }
+}
+
+shoppingCard.addEventListener("click", openCardMenu);
+
+function openCardMenu() {
+  if (cardProductsDiv.innerHTML != "") {
+    if (cardProducts.style.display == "block") {
+      cardProducts.style.display = "none";
+    } else {
+      cardProducts.style.display = "block";
+    }
   }
 }

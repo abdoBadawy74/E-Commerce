@@ -42,6 +42,27 @@ nav ul#userInfo {
   cursor: pointer;
   font-size: 20px;
 }
+nav ul#userInfo .card-products {
+  position: absolute;
+  width: 200px;
+  transform: translate(-42%, 0);
+  background-color: #eaeaea;
+  top: 46px;
+  padding: 10px;
+  border: 1px solid #090;
+  display: none;
+}
+nav ul#userInfo .card-products a {
+  display: block;
+  color: #000;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  padding: 10px;
+  padding: 6px;
+  background-color: #090;
+  color: #fff;
+}
 #userInfo li .badge {
   width: 20px;
   height: 20px;
@@ -54,6 +75,7 @@ nav ul#userInfo {
   position: absolute;
   top: -10px;
   right: -10px;
+  display: none;
 }
 nav li a {
   display: block;
