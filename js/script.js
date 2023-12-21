@@ -10,39 +10,6 @@ let shoppingCart = document.querySelector(".shopping-cart");
 
 let badge = document.querySelector(".badge");
 
-let products = [
-  {
-    id: 1,
-    title: "headphone",
-    size: "large",
-    imageUrl: "./images/headphone.jpg",
-  },
-  {
-    id: 2,
-    title: "Laptop",
-    size: "small",
-    imageUrl: "./images/laptop.jpg",
-  },
-  {
-    id: 3,
-    title: "keyboard",
-    size: "medium",
-    imageUrl: "./images/keyboard.jpg",
-  },
-  {
-    id: 4,
-    title: "tablet",
-    size: "meduim",
-    imageUrl: "./images/tablet.jpg",
-  },
-  {
-    id: 5,
-    title: "pc",
-    size: "large",
-    imageUrl: "./images/pc.jpeg",
-  },
-];
-
 function drawProductUI() {
   let productsUI = products.map((item) => {
     return `<div class="product-item">
@@ -65,17 +32,23 @@ function drawProductUI() {
 
 window.onload = drawProductUI;
 
-let addedItems = window.localStorage.getItem("productsInCart")
-  ? JSON.parse(window.localStorage.getItem("productsInCart"))
-  : [];
+function cartMenuData() {
+  let addedItems = window.localStorage.getItem("productsInCart")
+    ? JSON.parse(window.localStorage.getItem("productsInCart"))
+    : [];
 
-if (addedItems) {
-  addedItems.map((item) => {
-    cartProductsDiv.innerHTML += `<p>${item.title}</p>`
-  });
-  badge.style.display="block"
-  badge.innerHTML = addedItems.length
+  if (addedItems) {
+    addedItems.map((item) => {
+      cartProductsDiv.innerHTML += `<p>${item.title}</p>`;
+    });
+    addedItems.length > 0
+      ? (badge.style.display = "block")
+      : (badge.style.display = "none");
+    badge.innerHTML = addedItems.length;
+  }
 }
+
+cartMenuData();
 
 function addedToCart(id) {
   if (window.localStorage.getItem("username")) {
