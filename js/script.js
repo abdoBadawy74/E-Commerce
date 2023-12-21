@@ -29,11 +29,11 @@ function logout() {
 
 let productsDom = document.querySelector(".products");
 
-let cardProducts = document.querySelector(".card-products");
+let cartProducts = document.querySelector(".cart-products");
 
-let cardProductsDiv = document.querySelector(".card-products div");
+let cartProductsDiv = document.querySelector(".cart-products div");
 
-let shoppingCard = document.querySelector(".shopping-card");
+let shoppingCart = document.querySelector(".shopping-cart");
 
 let badge = document.querySelector(".badge");
 
@@ -82,7 +82,7 @@ function drawProductUI() {
         <span>size: ${item.size}</span>
       </div>
       <div class="product-actions">
-        <button class="add-to-cart" onclick="addedToCard(${item.id})">Add To Cart</button>
+        <button class="add-to-cart" onclick="addedToCart(${item.id})">Add To Cart</button>
         <i class="fa-regular fa-heart favorite"></i>
       </div>
     </div>`;
@@ -92,32 +92,37 @@ function drawProductUI() {
 
 window.onload = drawProductUI;
 
-function addedToCard(id) {
+let addedItems = [];
+
+function addedToCart(id) {
   if (window.localStorage.getItem("username")) {
     let clickedItem = products.find((item) => item.id === id);
-    cardProductsDiv.innerHTML += `
+    cartProductsDiv.innerHTML += `
     <p>${clickedItem.title}</p>
     `;
 
-    let cardProductsItem = document.querySelectorAll(".card-products div p");
+    addedItems = [...addedItems, clickedItem];
+
+    window.localStorage.setItem("productsInCart", JSON.stringify(addedItems));
+
+    let cartProductsItem = document.querySelectorAll(".cart-products div p");
     badge.style.display = "block";
-    badge.innerHTML = cardProductsItem.length;
+    badge.innerHTML = cartProductsItem.length;
   } else {
     setTimeout(() => {
-      window.location = "../login.html";    
+      window.location = "../login.html";
     }, 1000);
-  
   }
 }
 
-shoppingCard.addEventListener("click", openCardMenu);
+shoppingCart.addEventListener("click", openCartMenu);
 
-function openCardMenu() {
-  if (cardProductsDiv.innerHTML != "") {
-    if (cardProducts.style.display == "block") {
-      cardProducts.style.display = "none";
+function openCartMenu() {
+  if (cartProductsDiv.innerHTML != "") {
+    if (cartProducts.style.display == "block") {
+      cartProducts.style.display = "none";
     } else {
-      cardProducts.style.display = "block";
+      cartProducts.style.display = "block";
     }
   }
 }

@@ -42,7 +42,7 @@ nav ul#userInfo {
   cursor: pointer;
   font-size: 20px;
 }
-nav ul#userInfo .card-products {
+nav ul#userInfo .cart-products {
   position: absolute;
   width: 200px;
   transform: translate(-42%, 0);
@@ -52,7 +52,7 @@ nav ul#userInfo .card-products {
   border: 1px solid #090;
   display: none;
 }
-nav ul#userInfo .card-products a {
+nav ul#userInfo .cart-products a {
   display: block;
   color: #000;
   margin: 0;
