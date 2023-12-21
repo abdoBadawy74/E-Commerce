@@ -93,21 +93,20 @@ function drawProductUI() {
 window.onload = drawProductUI;
 
 function addedToCard(id) {
-  let clickedItem = products.find((item) => item.id === id);
-  cardProductsDiv.innerHTML += `
-  <p>${clickedItem.title}</p>
-  `;
-
-  let cardProductsItem = document.querySelectorAll(".card-products div p");
-  badge.style.display = "block";
-  badge.innerHTML = cardProductsItem.length;
-}
-
-function checkLoggedInUser() {
   if (window.localStorage.getItem("username")) {
-    window.location = "../card.html";
+    let clickedItem = products.find((item) => item.id === id);
+    cardProductsDiv.innerHTML += `
+    <p>${clickedItem.title}</p>
+    `;
+
+    let cardProductsItem = document.querySelectorAll(".card-products div p");
+    badge.style.display = "block";
+    badge.innerHTML = cardProductsItem.length;
   } else {
-    window.location = "../login.html";
+    setTimeout(() => {
+      window.location = "../login.html";    
+    }, 1000);
+  
   }
 }
 
