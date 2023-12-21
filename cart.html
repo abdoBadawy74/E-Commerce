@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>E-Commerce | Home</title>
+    <title>E-Commerce | | Cart Page</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -28,6 +28,14 @@
             </ul>
             <ul id="userInfo">
               <li><a href="#" id="user"></a></li>
+              <li class="shopping-cart">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span class="badge"></span>
+                <div class="cart-products">
+                  <div></div>
+                  <a href="./cart.html">View all products</a>
+                </div>
+              </li>
               <li><a href="#" id="logOut">Log Out</a></li>
             </ul>
           </nav>
@@ -36,8 +44,11 @@
     </header>
 
     <section class="home">
-        cards products
+      <div class="container">
+        <div class="products"></div>
+      </div>
     </section>
-    <script src="./js/script.js"></script>
+    <script src="./js/user.js"></script>
+    <script src="./js/cart.js"></script>
   </body>
 </html>

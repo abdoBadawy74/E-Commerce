@@ -1,30 +1,3 @@
-let userInfo = document.getElementById("userInfo");
-
-let userDom = document.getElementById("user");
-
-let links = document.getElementById("links");
-
-let username = window.localStorage.getItem("username");
-
-let logOutBtn = document.getElementById("logOut");
-
-if (username) {
-  links.remove();
-
-  userInfo.style.display = "flex";
-
-  userDom.innerHTML = username;
-}
-
-logOutBtn.addEventListener("click", logout);
-
-function logout() {
-  window.localStorage.clear();
-  setTimeout(() => {
-    window.location = "../register.html";
-  }, 1500);
-}
-
 // define products
 
 let productsDom = document.querySelector(".products");
@@ -92,7 +65,17 @@ function drawProductUI() {
 
 window.onload = drawProductUI;
 
-let addedItems = [];
+let addedItems = window.localStorage.getItem("productsInCart")
+  ? JSON.parse(window.localStorage.getItem("productsInCart"))
+  : [];
+
+if (addedItems) {
+  addedItems.map((item) => {
+    cartProductsDiv.innerHTML += `<p>${item.title}</p>`
+  });
+  badge.style.display="block"
+  badge.innerHTML = addedItems.length
+}
 
 function addedToCart(id) {
   if (window.localStorage.getItem("username")) {
