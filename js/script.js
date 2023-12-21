@@ -74,12 +74,25 @@ function drawProductUI() {
         <span>size: ${item.size}</span>
       </div>
       <div class="product-actions">
-        <button class="add-to-cart">Add To Cart</button>
+        <button class="add-to-cart" onclick="addedToCard(${item.id})">Add To Cart</button>
         <i class="fa-regular fa-heart favorite"></i>
       </div>
     </div>`;
   });
-  productsDom.innerHTML = productsUI.join('');
+  productsDom.innerHTML = productsUI.join("");
 }
 
-drawProductUI();
+window.onload = drawProductUI;
+
+function addedToCard(id) {
+  let clickedItem = products.find((item) => item.id === id);
+  console.log(clickedItem);
+}
+
+function checkLoggedInUser() {
+  if (window.localStorage.getItem("username")) {
+    window.location = "../card.html";
+  } else {
+    window.location = "../login.html";
+  }
+}
